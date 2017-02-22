@@ -3,6 +3,7 @@
 #include "UnKnownProject.h"
 #include "TuongTacCuaNguoiChoi.h"
 
+#define OUT
 
 // Sets default values for this component's properties
 UTuongTacCuaNguoiChoi::UTuongTacCuaNguoiChoi()
@@ -30,6 +31,24 @@ void UTuongTacCuaNguoiChoi::TickComponent(float DeltaTime, ELevelTick TickType, 
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
+	FVector ViTri;
+	FRotator GocQuay;
+	GetLocationAndRotationOfViewport(ViTri, GocQuay);
+	FVector LineTraceEnd = ViTri + GocQuay.Vector() * DoDaiTia;
+
+	DrawDebugLine(
+		GetWorld(),
+		ViTri,
+		LineTraceEnd,
+		FColor(0, 255, 0),
+		false,
+		0.0f,
+		0.0f,
+		3.0f
+	);
 }
 
+// L?y v? trí và góc nh?n c?a viewport
+void UTuongTacCuaNguoiChoi::GetLocationAndRotationOfViewport(FVector& VLocation, FRotator& VRotation) {
+	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT VLocation, OUT VRotation);
+}

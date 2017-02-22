@@ -1,4 +1,4 @@
-// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
+﻿// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
 
 #pragma once
 
@@ -23,6 +23,11 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+	void OpenDoor(); // TODO viết phương thức mở cửa
+	void CloseDoor(); // TODO viết phương thức đóng cửa
+
+private:
+	UPROPERTY(EditAnywhere)
+	bool CanOpenDoor = true;
 	
 };

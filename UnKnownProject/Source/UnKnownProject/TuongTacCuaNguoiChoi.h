@@ -23,6 +23,10 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+private:
+	UPROPERTY(EditAnywhere)
+	float DoDaiTia = 50.0f; // Ð? dài c?a tia phát ra t? viewport ð? s? d?ng cho k? thu?t LineTrace(RayCast) 
+
+	void GetLocationAndRotationOfViewport(FVector&, FRotator&);
 	
 };

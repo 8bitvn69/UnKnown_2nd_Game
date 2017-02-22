@@ -1,4 +1,4 @@
-// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
+﻿// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
 
 #include "UnKnownProject.h"
 #include "OpenDoor.h"
@@ -33,3 +33,12 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	// ...
 }
 
+// Phương thức mở cửa
+void UOpenDoor::OpenDoor() {
+
+}
+
+// Phương thức đóng cửa
+void UOpenDoor::CloseDoor() {
+
+}
