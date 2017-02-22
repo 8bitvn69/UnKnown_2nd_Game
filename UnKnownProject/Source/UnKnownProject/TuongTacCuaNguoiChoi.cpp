@@ -21,7 +21,7 @@ void UTuongTacCuaNguoiChoi::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
+	CaiDatDauVao();
 	
 }
 
@@ -46,9 +46,42 @@ void UTuongTacCuaNguoiChoi::TickComponent(float DeltaTime, ELevelTick TickType, 
 		0.0f,
 		3.0f
 	);
+
+	FHitResult Hit;
+	FCollisionQueryParams TraceParameters(FName(TEXT("")), false, GetOwner());
+	GetWorld()->LineTraceSingleByObjectType(
+		OUT Hit,
+		ViTri,
+		LineTraceEnd,
+		FCollisionObjectQueryParams(ECollisionChannel::ECC_GameTraceChannel1),
+		TraceParameters
+	);
+
+	if (Hit.GetActor() != nullptr) {
+		UE_LOG(LogTemp, Warning, TEXT("Cham vao tay nam cua: %s"), *(Hit.GetActor()->GetName()))
+	}
 }
 
 // Lấy vị trí và góc nhìn của viewport
 void UTuongTacCuaNguoiChoi::GetLocationAndRotationOfViewport(FVector& VLocation, FRotator& VRotation) {
 	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT VLocation, OUT VRotation);
+}
+
+// Cài đặt đầu vào điều khiển
+void UTuongTacCuaNguoiChoi::CaiDatDauVao() {
+	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+	if (InputComponent != nullptr) {
+		UE_LOG(LogTemp, Warning, TEXT("Tim thay InputComponent"))
+
+		InputComponent->BindAction("TuongTac", EInputEvent::IE_Pressed, this, &UTuongTacCuaNguoiChoi::ThucHienTuongTac);
+	}
+	else {
+		UE_LOG(LogTemp, Error, TEXT("Khong tim thay InputComponent"))
+	}
+
+}
+
+// Thực hiện việc tương tác với môi trường
+void UTuongTacCuaNguoiChoi::ThucHienTuongTac() {
+
 }

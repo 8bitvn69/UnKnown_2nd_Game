@@ -22,11 +22,13 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	void ThucHienTuongTac(); // TODO viết phương thức thực hiện tương tác
 
 private:
 	UPROPERTY(EditAnywhere)
 	float DoDaiTia = 50.0f; // Độ dài của tia phát ra từ viewport được sử dụng cho kỹ thuật LineTrace(RayCast)
+	UInputComponent* InputComponent = nullptr;
 
 	void GetLocationAndRotationOfViewport(FVector&, FRotator&);
-	
+	void CaiDatDauVao();
 };
