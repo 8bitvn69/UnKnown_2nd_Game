@@ -1,4 +1,4 @@
-// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
+﻿// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
 
 #pragma once
 
@@ -25,7 +25,7 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere)
-	float DoDaiTia = 50.0f; // �? d�i c?a tia ph�t ra t? viewport �? s? d?ng cho k? thu?t LineTrace(RayCast) 
+	float DoDaiTia = 50.0f; // Độ dài của tia phát ra từ viewport được sử dụng cho kỹ thuật LineTrace(RayCast)
 
 	void GetLocationAndRotationOfViewport(FVector&, FRotator&);
 	

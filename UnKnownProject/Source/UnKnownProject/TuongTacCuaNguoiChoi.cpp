@@ -1,4 +1,4 @@
-// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
+﻿// Tac gia: Phung Trong Hieu - Sinh vien K60 vien Toan ung dung va Tin hoc - HUST
 
 #include "UnKnownProject.h"
 #include "TuongTacCuaNguoiChoi.h"
@@ -48,7 +48,7 @@ void UTuongTacCuaNguoiChoi::TickComponent(float DeltaTime, ELevelTick TickType, 
 	);
 }
 
-// L?y v? tr� v� g�c nh?n c?a viewport
+// Lấy vị trí và góc nhìn của viewport
 void UTuongTacCuaNguoiChoi::GetLocationAndRotationOfViewport(FVector& VLocation, FRotator& VRotation) {
 	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(OUT VLocation, OUT VRotation);
 }
