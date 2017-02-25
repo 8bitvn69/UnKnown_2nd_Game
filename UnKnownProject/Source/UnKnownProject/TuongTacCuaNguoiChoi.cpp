@@ -59,6 +59,10 @@ void UTuongTacCuaNguoiChoi::TickComponent(float DeltaTime, ELevelTick TickType, 
 
 	if (Hit.GetActor() != nullptr) {
 		UE_LOG(LogTemp, Warning, TEXT("Cham vao tay nam cua: %s"), *(Hit.GetActor()->GetName()))
+
+		if (Hit.GetActor()->GetName() == FString("BP_Door_170")) {
+			// TODO tìm cách để giao tiếp được với BP_Door_170 để gửi lệnh tương tác
+		}
 	}
 }
 
@@ -83,5 +87,5 @@ void UTuongTacCuaNguoiChoi::CaiDatDauVao() {
 
 // Thực hiện việc tương tác với môi trường
 void UTuongTacCuaNguoiChoi::ThucHienTuongTac() {
-
+	OnClick.Broadcast();
 }

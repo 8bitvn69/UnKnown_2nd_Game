@@ -5,6 +5,7 @@
 #include "Components/ActorComponent.h"
 #include "TuongTacCuaNguoiChoi.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTuongTacEvent);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UNKNOWNPROJECT_API UTuongTacCuaNguoiChoi : public UActorComponent
@@ -31,4 +32,7 @@ private:
 
 	void GetLocationAndRotationOfViewport(FVector&, FRotator&);
 	void CaiDatDauVao();
+
+	UPROPERTY(BlueprintAssignable)
+	FTuongTacEvent OnClick;
 };

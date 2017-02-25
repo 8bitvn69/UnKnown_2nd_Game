@@ -23,6 +23,7 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	void NhanTuongTac(); // TODO viết phương thức nhận tương tác
 	void OpenDoor(); // TODO viết phương thức mở cửa
 	void CloseDoor(); // TODO viết phương thức đóng cửa
 

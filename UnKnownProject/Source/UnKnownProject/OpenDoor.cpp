@@ -33,6 +33,11 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	// ...
 }
 
+// Phương thức nhận tương tác
+void UOpenDoor::NhanTuongTac() {
+
+}
+
 // Phương thức mở cửa
 void UOpenDoor::OpenDoor() {
 
